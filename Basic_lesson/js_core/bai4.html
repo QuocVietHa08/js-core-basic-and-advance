@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript lesson 4</title>
+    <style type="text/css">
+    div{
+        padding:10px;
+        margin: 5px;
+    }
+    </style>
+</head>
+    <body>
+         <script language="javascript">
+            function change_background()
+            {
+                var divs = document.getElementsByTagName("div");
+                for (var i = 0; i < divs.length; i++){
+                    // Vị trí chẵn => màu đỏ
+                    if ((i + 1) % 2 == 0){
+                        divs[i].style.background = "red";
+                    }
+                    else { // Vị trí lẽ => màu xanh
+                        divs[i].style.background = "blue";
+                    }
+                }
+            }
+        </script>
+    
+<div>Thẻ thứ 1</div>
+<div>Thẻ thứ 1</div>
+<div>Thẻ thứ 1</div>
+<div>Thẻ thứ 1</div>
+<div>Thẻ thứ 1</div>
+<div>Thẻ thứ 1</div>
+<div>Thẻ thứ 1</div>
+<div>Thẻ thứ 1</div>
+<div>Thẻ thứ 1</div>
+<div>Thẻ thứ 1</div>
+<button onclick="change_background()">Change background</button>
+
+</body>
+</html>

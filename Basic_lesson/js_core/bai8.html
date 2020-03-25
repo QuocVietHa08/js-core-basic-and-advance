@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <input type="text" id="add_even" value=""/>
+        <div id="result"></div>
+        <script language="javascript">
+            //example about function addEvenListner
+            //get object 
+            var input =document.getElementById("add_even");
+
+            //add even for object
+            input.addEventListener('keyup',function()
+            {
+                //assign the value
+                document.getElementById('result').innerHTML=input.value;
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+    <body>
+        <div id="result"></div>
+        <input type="button" value="Stop Random" id="stop_random"/>
+       <script language="javascript">
+           //step 1:take object
+           var result = document.getElementById("result");
+           var button = document.getElementById("stop_random");
+           var html =document.getElementsByTagName("html")[0];
+
+           //step 2:define action through random number
+           function do_random()
+           {
+               var randomString = Math.random();
+               result.innerHTML = randomString;
+           }
+
+           //Step 3:add more action for even
+           html.addEventListener("mousemove",do_random);
+
+               //step 4:add more click even for button
+               button.addEventListener("click",function(){
+                    //delete action do_random off the even
+                    html.removeEventListener("mousemove",do_random);
+               });
+        
+
+       </script>
+    </body>
+</html>

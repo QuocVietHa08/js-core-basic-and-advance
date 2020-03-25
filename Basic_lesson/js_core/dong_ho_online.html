@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script>
+            //Begin function
+            function startTime()
+            {
+                //get Object current day
+                var today= new Date();
+                //time,minute,second present
+                var h=today.getHours();
+                var m=today.getMinutes();
+                var s=today.getSeconds();
+                //convert into 01,02,03;
+                m=checkTime(m);
+                s=checkTime(s);
+
+                //write into brower
+                document.getElementById("timer").innerHTML = h+":"+m +":"+s;
+
+                //use setTimeout function to setup 0.5s/times
+                var t=setTimeout(function()
+                {
+                    startTime();
+                },500);
+            }
+
+            //this function will convert smarter number into 01,02,03...
+            function checkTime(i)
+            {
+                if(i<10)
+                {
+                    i ="0"+i;
+                }
+                return i;
+            }
+        </script>
+    </head>
+    <body onload="startTime()">
+        <div id="timer"></div>
+    </body>
+</html>

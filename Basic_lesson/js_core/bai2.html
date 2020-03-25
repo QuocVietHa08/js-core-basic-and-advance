@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script language="javascript">
+        function Print_number()
+        {
+            //lay so
+            var so=document.getElementById("number").value;
+            //ep kieu sang int
+            so=parseInt(so);
+            //lap de in ket qua
+            var ketqua='';
+            for(var i=1;i<=so;i++)
+            {
+                ketqua +=i +'<br/>';
+            }
+            document.getElementById("result").innerHTML=ketqua;
+        }
+    </script>
+    <form action="" method="get">
+        Input:<input type="text" id="number" value="0"/>
+        <input type="button" value="result" onclick="Print_number()"/>
+    </form>
+    <div id="result">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+
+        <script language="javascript">
+    //write 2 program that plus 2 number together
+    function plus_number()
+    {
+        var sum=0;
+        //get number for user
+        var n=parseInt(prompt("Enter the number"));
+
+        //check the value
+        if(n<= 0)
+        {
+            alert("You need to enter the bigger than 0");
+        }
+        else{
+            //caculator
+            for(var i =1;i <= n;i++)
+            {
+                sum += (1/i);
+            }
+            document.write("The result: "+sum);
+        }
+    }
+    // call the function
+    plus_number();
+</script>
+   

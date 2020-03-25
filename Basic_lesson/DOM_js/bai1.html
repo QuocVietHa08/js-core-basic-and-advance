@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="Conten-type" content="text/html">
+    <title>Searching</title>
+    <style>
+        #search_advance{
+            display: none;
+        }
+    </style>
+    <script language="javascript">
+        function show_search_advance()
+        {
+            //get a tag and category
+            var a=document.getElementById("show_search_advance");
+            var category = document.getElementById("search_advance");
+
+            //get the content of a tag
+            var text = a.innerHTML;
+
+            //check and display and hide the object of a tag
+            if( text == "Advance Fiding")
+            {
+                category.style.display ="table-row";
+                a.innerHTML ="Drop Advance Fiding";
+            }
+            else{
+                category.style.display ="none";
+                a.innerHTML =" Advance Fiding"
+            }
+            //Return false so when click into a tag it will not be out
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <h1>Searching data</h1>
+    <table border="1" cellspacing="0" cellpadding="5">
+        <tr>
+            <td>Enter content</td>
+            <td>
+                <input type="text" id="title" value=""/><br/>
+                <a href="#" onclick="return show_search_advance()" id="show_search_advance">Advance Fiding</a>
+            </td>
+        </tr> 
+        <tr id="search_advance">
+            <td>Choose category</td>
+            <td>
+            <select name="" id="category">
+            <option value="1">Java</option>
+            <option value="2">Python</option>
+            </select>
+        </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" id="btn_search" value="Find"/>
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>

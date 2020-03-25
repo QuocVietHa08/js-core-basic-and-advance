@@ -1,0 +1,40 @@
+<html>
+    <body>
+        <div id="content">
+            <h5>Good luck</h5>
+        </div>
+        <input type="button" name="" id="btn-replace" value="Replace">
+        <script language="javascript">
+            //Dom node is used to query to some object and the result will give an object 
+            // and that object is called DOM Nodes
+            // These are some way to use DOM nodes like
+            //Example 1:createElement
+           /* var p=document.createElement("p");
+            var text = document.createTextNode("HIHI hello")
+            //add content html into p tag
+            p.appendChild(text);
+
+            //give p tag into body tag
+            document.getElementsByTagName('body')[0].appendChild(p);*/
+            //Example 2:insertBefore
+            //get button
+            // Lấy button
+          var button = document.getElementById("btn-replace");
+
+          //add more even click for button
+          button.addEventListener("click",function()
+          {
+            //create a tag
+            var p=document.createElement("h1");
+            p.innerHTML ="asfdsafasf";
+
+            //get tag need to replace
+            var replace =document.getElementsByTagName("h5")[0];
+
+            //replace
+            document.getElementById("content").replaceChild(p, replace);
+          });
+        </script>
+        
+    </body>
+</html>

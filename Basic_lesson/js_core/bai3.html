@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <form action="" method="get">
+            Input:<input type="text" id="number" value="0"/>
+            <input type="button" name="" value="submitt" onclick="Print_number">
+        </form>
+        <div id="reslut"></div>
+        <script language="javascript">
+            function check_number(n)
+            {
+                //ham kiem tra so nguyen to
+                var snt=true;
+
+                //neu n be hon 2 tuc la khong phai so nguyen to
+                if(n<2)
+                    {
+                        snt=false;
+                    }
+                    else 
+                    {
+                     for(int i=2;i<Math.sqrt(n);i++)
+                     {
+                         if(n%i==0)
+                         {
+                             snt=false;
+                             break;
+                         }
+                     }
+                      return snt;  
+                    }
+            }
+            function Print_number()
+            {
+                //lay so
+                var number=document.getElementById("number").value;
+                //ep kieu
+                number = praseInt(number);
+                //lap in ra man hinh
+                var ketqua='';
+                for(var i=1;i<number;i++)
+                {
+                    if(check_number(i))
+                    {
+                        ketqua+= i+'<br/>';
+                    }
+                }
+                document.getElementById("result").innerHTML= ketqua;
+            }
+        </script>
+    </body>
+</html>

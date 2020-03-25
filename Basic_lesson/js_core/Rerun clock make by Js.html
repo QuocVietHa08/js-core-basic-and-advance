@@ -1,0 +1,91 @@
+
+<!-- saved from url=(0051)http://127.0.0.1:5500/Basic_lesson/rerun_clock.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Rerun clock make by Js</title>
+        
+        <style>
+            body{
+                padding:0;
+                margin: 0.5px;
+                background-color: darksalmon;
+            }
+            .input_form{
+                text-align: center;
+                margin-top: 50px;
+                width: 300px
+                height: 150px;
+            }
+            .input_form_place{
+                width: 300px;
+                height:30px;
+                text-align: center;
+                border: dimgray;
+            }
+            .button_form{
+                margin: 7px 0px;
+                width:100px;
+                height: 25px;
+            }
+            .output_form{
+                text-align: center;
+                border:solid 1px #aaccaa;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="input_form">
+            <strong>
+                Get begin information <br>
+            </strong>
+            <input type="text" id="h_val" placeholder="Hour" value="" class="input_form_place"> <br>
+            <input type="text" id="m_val" placeholder="Minute" value="" class="input_form_place"><br>
+            <input type="text" id="s_val" placeholder="Second" value="" class="input_form_place"><br>
+            <input type="button" value="Start" onclick="start()" class="button_form">
+            <input type="button" value="Stop" onclick="stop()" class="button_form">
+            <br> <br>
+        </div>
+        <div id="h" class="output_form" style="
+    /* text-align: center; */
+">Hour</div>
+        <div id="m" class="output_form">Minute</div>
+        <div id="s" class="output_form">Second</div>
+    
+    <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>

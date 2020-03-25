@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <title>Rerun clock make by Js</title>
+        <meta http-equiv="Content-Type" content="text/html; charset= UTF-8">
+        <style>
+            body{
+                padding:0;
+                margin: 0.5px;
+                background-color: darksalmon;
+            }
+            .input_form{
+                text-align: center;
+                margin-top: 50px;
+                width: 300px;
+                height: 150px;
+            }
+            .input_form_place{
+                width: 300px;
+                height:30px;
+                text-align: center;
+                border: dimgray;
+            }
+            .button_form{
+                margin: 7px 0px;
+                width:100px;
+                height: 25px;
+            }
+            .output_form{
+                text-align: center;
+                border: solid 1px #acacac;
+                position: relative;
+                left: 37%;
+                width: 40px;
+                height: 20px;
+
+            }
+            .main_form{
+                width: 500px;
+                height:400px;
+                padding-top: 5px;
+                left: 29%;
+                position: absolute;
+            }
+        </style>
+        <SCript lang="javacript">
+            var h=null;//hour
+            var m=null;//minute
+            var s=null;//second
+
+            var timeout = null//time out
+            function start()
+            {
+                //take the first time
+                if(h===null)
+                {
+                    h = parseInt(document.getElementById('h_val').value);
+                    m = parseInt(document.getElementById('m_val').value);
+                    s = parseInt(document.getElementById('s_val').value);
+                }
+
+                //transfer data
+                //if second == -1 that mean end of time
+                //-decrease the minute 1.
+                //-set up the second into 59.
+                if(s === -1)
+                {
+                    m-=1;
+                    s=59;
+                }
+            
+
+            //if the minute =-1 that mean end of the minute
+            //-decrease the minute into 1 .
+            //-set up the minute into 59.
+            if(m ===-1)
+            {
+                h-=1;
+                m=59;
+            }
+
+            //if the hour =-1 that mean end of hour
+            //-stop the program/
+            if(h == -1)
+            {
+                clearTimeout(timeout);
+                alert('End of Time');
+                return false;
+            }
+            //step 1:show the clock
+            document.getElementById('h').innerText=h.toString();
+            document.getElementById('m').innerText=m.toString();
+            document.getElementById('s').innerText=s.toString();
+            //step 1:decrease minute 1 second and call back after 1 second
+            timeout = setTimeout(function(){
+                s--;
+                start();
+            }, 1000);
+        }
+            function stop()
+            {
+                clearTimeout(timeout);
+            }
+        </SCript>
+    </head>
+    <body>
+        <div class="main_form">
+        <div class="input_form">
+            <strong>
+                GET BASIC INFORMATION</head><br/>
+            </strong>
+            <input type="text" id="h_val" placeholder="Hour" value="" class="input_form_place"/> <br/>
+            <input type="text" id="m_val" placeholder="Minute" value="" class="input_form_place"/><br/>
+            <input type="text" id="s_val" placeholder="Second" value="" class="input_form_place"/><br/>
+            <input type="button" value="Start" onclick="start()" class="button_form"/>
+            <input type="button" value="Stop" onclick="stop()" class="button_form"/>
+            <br/> <br/>
+        </div>
+        
+            <span id="h" class="output_form">Hour</span>
+        <span id="m" class="output_form">Minute</span>
+        <span id="s"  class="output_form">Second</span>
+        
+    
+    </div>
+    </body>
+</html>
